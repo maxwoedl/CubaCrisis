@@ -9,6 +9,9 @@ html, body {
 * {
   box-sizing: border-box; }
 
+[data-simplebar] {
+  overflow: auto; }
+
 .wrapper {
   background: white;
   height: 100vh;
