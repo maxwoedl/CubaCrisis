@@ -35,12 +35,23 @@ html, body{
     height: 70vh;
     margin-top: 4rem;
     margin-right: 1rem;
+    background: white;
     border: 1px solid black;
     border-radius: 20px;
+    overflow-y: scroll;
 
     .container{
       margin: 0 auto;
-      width: 95%;
+      box-sizing: border-box;
+      width: 90%;
+      height: 100%;
+
+      figure{
+
+        img{
+          width: 100%;
+        }
+      }
     }
   }
 }
