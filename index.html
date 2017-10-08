@@ -82,6 +82,13 @@ $('#nav-button').click( function(){
   $(this).children().toggleClass( 'fa-navicon').toggleClass( 'fa-close');
   $('#nav-list').toggleClass('nav-show'); $('#cover').toggleClass('display');
 });
+
+$('#cover').click( function(){
+  $('#nav-button').toggleClass('width');
+  $('#nav-button').parent().toggleClass('show');
+  $('#nav-button').children().toggleClass( 'fa-navicon').toggleClass( 'fa-close');
+  $('#nav-list').toggleClass('nav-show'); $('#cover').toggleClass('display');
+});
 </script>
   </body>
 </html>
