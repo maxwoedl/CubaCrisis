@@ -2,15 +2,19 @@ var DEBUG = true;
 
 // ---------- Coordinates -----------------------------------------------
 var offset = {long: 20, lat: 0};
-var cuba = {zoom: 7, long: -60, lat: 22};
 var center = {zoom: 1, long: 10, lat: 44.5};
 
-var havanna = {zoom: 7, long: -82, lat: 23};
-var washington = {zoom: 5, long: -77, lat: 39};
-var moscow = {zoom: 5, long: 38, lat: 56};
+var havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"};
+var washington = {zoom: 5, long: -77, lat: 39, label: "Washington DC"};
+var moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"};
 
-
+var destinations = [havanna, washington, moscow];
 // ---------- Generating Map -----------------------------------------------
+
+var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4
+C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4
+	C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
+
     var map = AmCharts.makeChart("mapdiv", {
       "type": "map",
       "theme": "light",
@@ -55,28 +59,31 @@ function zoomOut() {
 }
 
 function zoomToDestination(dest) {
-    map.zoomToLongLat(center.zoom, center.long, center.lat);
+    map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat);
 
-    setTimeout(function() {
-    map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
-    }, 1500);
+    if(dest !== center) {
+      setTimeout(function() {
+        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
+      }, 1500);
+    }
 }
 
 // ---------- Labels -----------------------------------------------
 setTimeout(function () {
     map.dataProvider.images = [];
-    for(var i = 0; i < 3; i++) {
-      var area = map.dataProvider.areas[i];
-      area.groupId = area.id;
-      var image = new AmCharts.MapImage();
-      image.latitude = map.getAreaCenterLatitude( area );
-      image.longitude = map.getAreaCenterLongitude( area );
-      image.label = area.title;
-      image.title = area.title;
-      map.dataProvider.images.push( image );
+
+    for(var i = 0; i < destinations.length; i++) {
+        let pin = new AmCharts.MapImage();
+        pin.longitude = destinations[i].long;
+        pin.latitude = destinations[i].lat;
+        pin.svgPath = icon;
+        pin.label = destinations[i].label;
+        pin.labelShiftY = 2;
+        map.dataProvider.images.push(pin);
     }
+
     map.validateData();
-    console.log(map.dataProvider);
+
 }, 800);
 
 
