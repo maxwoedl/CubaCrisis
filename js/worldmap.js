@@ -73,7 +73,7 @@ setTimeout(function () {
     }
     map.validateData();
     console.log(map.dataProvider);
-}, 100);
+}, 1000);
 
 
 
