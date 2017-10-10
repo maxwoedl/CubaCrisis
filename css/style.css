@@ -13,9 +13,9 @@ html, body {
   overflow: auto; }
 
 .wrapper {
-  background: white;
   height: 100vh;
   width: 100vw;
+  z-index: -50;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -53,7 +53,7 @@ html, body {
     left: 0;
     position: fixed;
     overflow: hidden;
-    transition: background 0.3s ease-in-out, width 0.3s ease; }
+    transition: background 0.3s ease-in-out, width 0.3s ease; }
     .wrapper nav.show {
       background: #171717;
       width: 18em; }
@@ -135,13 +135,22 @@ html, body {
     border: 1px solid black;
     width: 90vw;
     height: 10vh;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-right: 1rem;
     border-radius: 20px; }
+  .wrapper #mapdiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6a98dd;
+    z-index: -20;
+    padding: 2vh 2vw; }
   .wrapper .content {
     width: 60vw;
-    height: 70vh;
-    margin-top: 4rem;
+    height: 75vh;
+    margin-top: 8.5vh;
     margin-right: 1rem;
     background: white;
     border: 1px solid black;
