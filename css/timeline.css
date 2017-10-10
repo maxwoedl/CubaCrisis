@@ -1,0 +1,47 @@
+#customline {
+    width: 80%;
+    height: 5px;
+    margin: 1rem auto;
+    display: flex;
+    background-color: #35BB35;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-radius: 2px;
+}
+
+.knot {
+    flex-grow: 1;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.knotdiv {
+    flex-basis: 30%;
+    margin-top: -6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.knottext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.knotpoint {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 3px solid darkcyan;
+    border-radius: 50%;
+    transition: all 0.1s linear;
+}
+
+.knotpoint:hover {
+    width: 26px;
+    height: 26px;
+    background-color: darkcyan;
+}
