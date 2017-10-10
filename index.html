@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,6 +10,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/timeline.css">
 
     <!-- Simplebar -->
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
@@ -23,10 +25,7 @@
     <script src="js/worldmap.js"></script>
 
 
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
 
     <!-- Metadaten -->
@@ -42,63 +41,104 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/" type="image/x-icon">
     <link rel="icon" href="images/" type="image/x-icon">
-  </head>
-  <body>
+</head>
 
-  <section class="wrapper">
-    <div id="cover"></div>
-    <nav>
-      <div id="nav-button"><span class="fa fa-navicon"></span></div>
-      <ul id="nav-list">
-        <li><a href="#">Nav Item 1</a></li>
-        <li><a href="#">Nav Item 2</a></li>
-        <li><a href="#">Nav Item 3</a></li>
-        <li><a href="#">Nav Item 4</a></li>
-        <li><a href="#">Nav Item 5</a></li>
-      </ul>
-    </nav>
+<body>
 
-    <div id="mapdiv"></div>
+    <section class="wrapper">
+        <div id="cover"></div>
+        <nav>
+            <div id="nav-button"><span class="fa fa-navicon"></span></div>
+            <ul id="nav-list">
+                <li><a href="#">Nav Item 1</a></li>
+                <li><a href="#">Nav Item 2</a></li>
+                <li><a href="#">Nav Item 3</a></li>
+                <li><a href="#">Nav Item 4</a></li>
+                <li><a href="#">Nav Item 5</a></li>
+            </ul>
+        </nav>
 
-    <div class="timeline">
+        <div id="mapdiv"></div>
 
-    </div>
+        <div class="timeline">
+            <div id="customline">
+                <div class="knot" id="knot0" t="1910">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1910</div>
+                </div>
+                <div class="knot" id="knot1" t="1912">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1912</div>
+                </div>
+                <div class="knot" id="knot2" t="1918">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1918</div>
+                </div>
+                <div class="knot" id="knot3" t="1927">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1927</div>
+                </div>
+                <div class="knot" id="knot4" t="1928">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1928</div>
+                </div>
+                <div class="knot" id="knot5" t="1935">
+                    <div class="knotdiv">
+                        <div class="knotpoint"></div>
+                    </div>
+                    <div class="knottext">1935</div>
+                </div>
+            </div>
+        </div>
 
-    <div class="content" data-simplebar>
-      <div class="container">
-        <h1>Das ist eine Überschrift</h1>
+        <div class="content" data-simplebar>
+            <div class="container">
+                <h1>Das ist eine Überschrift</h1>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum pellentesque neque, eu dapibus justo pretium vel. Vestibulum porttitor interdum sapien, pretium euismod tellus posuere gravida. Fusce finibus sem et rhoncus faucibus. Sed hendrerit, nisl ut blandit laoreet, velit justo facilisis ex, at euismod nibh elit et enim. Cras et fringilla ipsum, a vestibulum elit. Sed tempor erat dapibus commodo sollicitudin. Aenean nec nulla ut ligula faucibus vestibulum eu non orci.
-        </p>
-        <p>
-        Proin tincidunt ac augue sit amet auctor. Sed dignissim, erat in mattis eleifend, mauris felis hendrerit nunc, a malesuada risus dui ac erat. Proin sed lectus vitae tellus elementum ornare quis nec risus. Duis non bibendum nulla, eget semper massa. Morbi mauris diam, posuere et hendrerit sed, faucibus vitae lorem. Quisque malesuada vel neque quis pretium. In vitae lectus velit. Cras in ipsum ullamcorper nisi finibus porta. Nam euismod diam nec tortor viverra convallis. Nunc dignissim dui sit amet diam auctor egestas. Nulla id fermentum arcu. Sed et dictum neque, sed tincidunt lectus. Quisque tellus lorem, auctor eget diam non, tincidunt hendrerit orci. Donec consectetur, felis ac fermentum pharetra, eros sapien rutrum felis, a condimentum orci lectus sed sem. Pellentesque lacinia laoreet ex, in vulputate nulla feugiat nec.
-        </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum pellentesque neque, eu dapibus justo pretium vel. Vestibulum porttitor interdum sapien, pretium euismod tellus posuere gravida. Fusce finibus sem et rhoncus faucibus. Sed hendrerit, nisl ut blandit laoreet, velit justo facilisis ex, at euismod nibh elit et enim. Cras et fringilla ipsum, a vestibulum elit. Sed tempor erat dapibus commodo sollicitudin. Aenean nec nulla ut ligula faucibus vestibulum eu non orci.
+                </p>
+                <p>
+                    Proin tincidunt ac augue sit amet auctor. Sed dignissim, erat in mattis eleifend, mauris felis hendrerit nunc, a malesuada risus dui ac erat. Proin sed lectus vitae tellus elementum ornare quis nec risus. Duis non bibendum nulla, eget semper massa. Morbi mauris diam, posuere et hendrerit sed, faucibus vitae lorem. Quisque malesuada vel neque quis pretium. In vitae lectus velit. Cras in ipsum ullamcorper nisi finibus porta. Nam euismod diam nec tortor viverra convallis. Nunc dignissim dui sit amet diam auctor egestas. Nulla id fermentum arcu. Sed et dictum neque, sed tincidunt lectus. Quisque tellus lorem, auctor eget diam non, tincidunt hendrerit orci. Donec consectetur, felis ac fermentum pharetra, eros sapien rutrum felis, a condimentum orci lectus sed sem. Pellentesque lacinia laoreet ex, in vulputate nulla feugiat nec.
+                </p>
 
-        <figure>
-          <img src="images/meduana-6917.jpg" alt="">
-          <figcaption></figcaption>
-        </figure>
-      </div>
-    </div>
+                <figure>
+                    <img src="images/meduana-6917.jpg" alt="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
 
-  </section>
+    </section>
 
-<script>
-// My poor javascript skillz.
-$('#nav-button').click( function(){
-  $(this).toggleClass('width');
-  $(this).parent().toggleClass('show');
-  $(this).children().toggleClass( 'fa-navicon').toggleClass( 'fa-close');
-  $('#nav-list').toggleClass('nav-show'); $('#cover').toggleClass('display');
-});
+    <script>
+        // My poor javascript skillz.
+        $('#nav-button').click(function () {
+            $(this).toggleClass('width');
+            $(this).parent().toggleClass('show');
+            $(this).children().toggleClass('fa-navicon').toggleClass('fa-close');
+            $('#nav-list').toggleClass('nav-show');
+            $('#cover').toggleClass('display');
+        });
 
-$('#cover').click( function(){
-  $('#nav-button').toggleClass('width');
-  $('#nav-button').parent().toggleClass('show');
-  $('#nav-button').children().toggleClass( 'fa-navicon').toggleClass( 'fa-close');
-  $('#nav-list').toggleClass('nav-show'); $('#cover').toggleClass('display');
-});
-</script>
-  </body>
+        $('#cover').click(function () {
+            $('#nav-button').toggleClass('width');
+            $('#nav-button').parent().toggleClass('show');
+            $('#nav-button').children().toggleClass('fa-navicon').toggleClass('fa-close');
+            $('#nav-list').toggleClass('nav-show');
+            $('#cover').toggleClass('display');
+        });
+    </script>
+</body>
+
 </html>
