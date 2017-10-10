@@ -1,6 +1,5 @@
 # CubaCrisis
 
 
-- Nussi is Bombe
+- Nussi is Shit
 - Clemens ist ein Horn
--  

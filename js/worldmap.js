@@ -6,7 +6,7 @@ var russia = {zoom: 5, long: 100, lat: 50};
 var center = {zoom: 1, long: 10, lat: 44.5};
 
 
-// ---------- Generating Map -----------------------------------------------    
+// ---------- Generating Map -----------------------------------------------
     var map = AmCharts.makeChart("mapdiv", {
       "type": "map",
       "theme": "light",
@@ -40,7 +40,7 @@ var center = {zoom: 1, long: 10, lat: 44.5};
         }
       }]
     });
-    
+
 
 function zoomIn() {
   map.zoomIn();
@@ -52,12 +52,12 @@ function zoomOut() {
 
 function zoomToCity(city) {
     map.zoomToLongLat(center.zoom, center.long, center.lat);
-    
+
     setTimeout(function() {
     map.zoomToLongLat(city.zoom, city.long, city.lat);
     }, 1500);
 }
-    
+
 // ---------- Labels -----------------------------------------------
 setTimeout(function () {
     map.dataProvider.images = [];
@@ -74,11 +74,12 @@ setTimeout(function () {
     map.validateData();
     console.log(map.dataProvider);
 }, 100);
-    
+
+
 
 // ---------- Debugging (activate debug var to enable) -----------------------------------------------
 window.addEventListener("keydown", function(event) {
-    if(DEBUG) {  
+    if(DEBUG) {
         switch(event.keyCode) {
             case 67: zoomToCity(cuba); break;
             case 82: zoomToCity(russia); break;
@@ -86,4 +87,3 @@ window.addEventListener("keydown", function(event) {
         }
     }
 });
-    
