@@ -4,7 +4,9 @@ html, body {
   width: 100%;
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #6a98dd;
+  overflow: hidden; }
 
 * {
   box-sizing: border-box; }
@@ -140,10 +142,10 @@ html, body {
     z-index: 1; }
   .wrapper #mapdiv {
     position: absolute;
-    top: 0;
+    top: -5vh;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background-color: #6a98dd; }
   .wrapper .content {
     width: 60vw;
