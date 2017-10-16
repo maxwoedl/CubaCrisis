@@ -1,5 +1,6 @@
 # CubaCrisis
 
 
-- Nussi is Shit
-- Clemens ist ein Horn
+- Nussi is Killer, Brudaaa
+- Clemens ist ein Instrument
+  - Horn
