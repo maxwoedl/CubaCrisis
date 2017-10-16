@@ -1,18 +1,16 @@
 var DEBUG = true;
-var atCenter = false;
 
 // ---------- Coordinates -----------------------------------------------
 var offset = {long: 20, lat: 0};
 var center = {zoom: 1, long: 10, lat: 44.5};
 
 var havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"};
-var washington = {zoom: 5, long: -77, lat: 39, label: "Washington DC"};
+var washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"};
 var moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"};
 
 var destinations = [havanna, washington, moscow];
-// ---------- Generating Map -----------------------------------------------
 
-var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
+// ---------- Generating Map -----------------------------------------------
 
     var map = AmCharts.makeChart("mapdiv", {
       "type": "map",
@@ -23,7 +21,7 @@ var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0
       "dataProvider": {
         "map": "worldLow",
         "getAreasFromMap": false,
-        "areas": [ {id: "US", color: "#F08080"}, {id: "RU", color: "#ADD8E6"}, {id: "CU", color: "#FF4500"}],
+        "areas": [ {id: "US", color: "#F08080"}, {id: "RU", color: "#ADD8E6"}, {id: "CU", color: "#FF4500"}],   // Colors of used countries
       },
       "zoomControl": {
           "zoomControlEnabled": false,
@@ -31,11 +29,8 @@ var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0
       },
       "areasSettings": {
         "autoZoom": false,
-        "unlistedAreasColor": "#b5b9bf"
-      },
-      "imagesSettings": {
-        "labelPosition": "middle",
-        "labelFontSize": 11
+        "unlistedAreasColor": "#b5b9bf",    // Color of unused countries
+        "rollOverColor": "#0000FF"          // Color when hovering country
       },
       "listeners": [{
         "event": "rendered",
@@ -66,6 +61,9 @@ function zoomToDestination(dest) {
 }
 
 // ---------- Labels -----------------------------------------------
+
+// var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
+
 setTimeout(function () {
     map.dataProvider.images = [];
 
@@ -79,6 +77,7 @@ setTimeout(function () {
         pin.labelFontSize = 14;
 				pin.longitude = destinations[i].long;
         pin.latitude = destinations[i].lat;
+        pin.labelRollOverColor = "#000000";     // Color when hovering the label of destination
         // pin.svgPath = icon;
 				// pin.color = "#ff0000";
 				// pin.scale = 2;
