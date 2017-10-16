@@ -108,6 +108,11 @@ window.addEventListener("load", function(){
 
 // ---------- Debugging (activate debug var to enable) -----------------------------------------------
 window.addEventListener("keydown", function(event) {
+    if(event.keyCode == 112) {
+        DEBUG = (DEBUG) ? false : true;
+        console.log("Debugging:" + DEBUG);
+    }
+
     if(DEBUG) {
         switch(event.keyCode) {
             case 27: zoomToDestination(center); break;
