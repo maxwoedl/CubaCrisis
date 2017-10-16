@@ -55,7 +55,7 @@ html, body {
     left: 0;
     position: fixed;
     overflow: hidden;
-    transition: background 0.3s ease-in-out, width 0.3s ease; }
+    transition: background 0.3s ease-in-out, width 0.3s ease; }
     .wrapper nav.show {
       background: #171717;
       width: 18em; }
@@ -89,10 +89,6 @@ html, body {
       cursor: pointer;
       box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3); }
     .wrapper #nav-button.width {
-      width: 80em;
-      height: 80em;
-      top: -37.5em;
-      left: -37.5em;
       box-shadow: none; }
       .wrapper #nav-button.width:before {
         content: '';
