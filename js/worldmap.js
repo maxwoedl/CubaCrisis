@@ -1,4 +1,5 @@
 var DEBUG = true;
+var atCenter = false;
 
 // ---------- Coordinates -----------------------------------------------
 var offset = {long: 20, lat: 0};
@@ -11,9 +12,7 @@ var moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"};
 var destinations = [havanna, washington, moscow];
 // ---------- Generating Map -----------------------------------------------
 
-var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4
-C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4
-	C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
+var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
 
     var map = AmCharts.makeChart("mapdiv", {
       "type": "map",
@@ -61,11 +60,9 @@ function zoomOut() {
 function zoomToDestination(dest) {
     map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat);
 
-    if(dest !== center) {
-      setTimeout(function() {
-        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
-      }, 1500);
-    }
+    setTimeout(function() {
+      map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
+    }, 1500);
 }
 
 // ---------- Labels -----------------------------------------------
@@ -74,17 +71,27 @@ setTimeout(function () {
 
     for(var i = 0; i < destinations.length; i++) {
         let pin = new AmCharts.MapImage();
-        pin.longitude = destinations[i].long;
+				pin.imageURL = "images/pin_marker.svg";
+        pin.width = 30;
+        pin.height = 60;
+        pin.labelShiftY = -10;
+        pin.labelShiftX = -5;
+        pin.labelFontSize = 14;
+				pin.longitude = destinations[i].long;
         pin.latitude = destinations[i].lat;
-        pin.svgPath = icon;
+        // pin.svgPath = icon;
+				// pin.color = "#ff0000";
+				// pin.scale = 2;
         pin.label = destinations[i].label;
-        pin.labelShiftY = 2;
+        pin.labelPosition = "right";
         map.dataProvider.images.push(pin);
     }
 
     map.validateData();
 
-}, 800);
+    zoomToDestination(center);
+
+}, 500);
 
 
 
