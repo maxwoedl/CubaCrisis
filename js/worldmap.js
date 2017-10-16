@@ -30,8 +30,12 @@ var destinations = [havanna, washington, moscow];
       },
       "areasSettings": {
         "autoZoom": false,
-        "unlistedAreasColor": "#D0E1B1",    // Color of unused countries
-        "rollOverColor": "#2B3545"          // Color when hovering country
+        "unlistedAreasColor": "#D0E1B1",            // Color of unused countries
+        "rollOverColor": "#2B3545",                 // Color when hovering country
+        "outlineColor": "#FF0000",                  // Color of used country outline
+        "unlistedAreasOutlineColor": "#FF0000",    // Color of unused country outline
+        "alpha": 1,
+        "unlistedAreasAlpha": 1
       },
       "listeners": [{
         "event": "rendered",
