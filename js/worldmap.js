@@ -55,14 +55,14 @@ function zoomOut() {
 
 function zoomToDestination(dest) {
     if(!atCenter) {
-        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat);
+        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat + offset.lat);
 
         setTimeout(function() {
-            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
+            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat);
         }, 1500);
     }
     else {
-        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat);
+        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat);
     }
 
     atCenter = (dest == center) ? true : false;
@@ -106,8 +106,6 @@ window.addEventListener("load", function(){
 window.addEventListener("keydown", function(event) {
     if(DEBUG) {
         switch(event.keyCode) {
-            case 67: zoomToDestination(cuba); break;
-            case 82: zoomToDestination(russia); break;
             case 27: zoomToDestination(center); break;
             case 87: zoomToDestination(washington); break;
             case 72: zoomToDestination(havanna); break;
