@@ -22,7 +22,7 @@ var destinations = [havanna, washington, moscow];
       "dataProvider": {
         "map": "worldLow",
         "getAreasFromMap": false,
-        "areas": [ {id: "US", color: "#F08080"}, {id: "RU", color: "#ADD8E6"}, {id: "CU", color: "#FF4500"}],   // Colors of used countries
+        "areas": [ {id: "US", color: "#FC4754"}, {id: "RU", color: "#ADD8E6"}, {id: "CU", color: "#FF4500"}],   // Colors of used countries
       },
       "zoomControl": {
           "zoomControlEnabled": false,
@@ -30,8 +30,12 @@ var destinations = [havanna, washington, moscow];
       },
       "areasSettings": {
         "autoZoom": false,
-        "unlistedAreasColor": "#b5b9bf",    // Color of unused countries
-        "rollOverColor": "#0000FF"          // Color when hovering country
+        "unlistedAreasColor": "#D0E1B1",            // Color of unused countries
+        "rollOverColor": "#2B3545",                 // Color when hovering country
+        "outlineColor": "#7D807C",                  // Color of used country outline
+        "unlistedAreasOutlineColor": "#7D807C",    // Color of unused country outline
+        "alpha": 1,
+        "unlistedAreasAlpha": 1
       },
       "listeners": [{
         "event": "rendered",
@@ -104,6 +108,11 @@ window.addEventListener("load", function(){
 
 // ---------- Debugging (activate debug var to enable) -----------------------------------------------
 window.addEventListener("keydown", function(event) {
+    if(event.keyCode == 112) {
+        DEBUG = (DEBUG) ? false : true;
+        console.log("Debugging:" + DEBUG);
+    }
+
     if(DEBUG) {
         switch(event.keyCode) {
             case 27: zoomToDestination(center); break;
