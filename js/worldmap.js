@@ -22,7 +22,7 @@ var destinations = [havanna, washington, moscow];
       "dataProvider": {
         "map": "worldLow",
         "getAreasFromMap": false,
-        "areas": [ {id: "US", color: "#FC4754"}, {id: "RU", color: "#ADD8E6"}, {id: "CU", color: "#FF4500"}],   // Colors of used countries
+        "areas": [ {id: "US", color: "#B0E1B1"}, {id: "RU", color: "#B0E1B1"}, {id: "CU", color: "#B0E1B1"}],   // Colors of used countries
       },
       "zoomControl": {
           "zoomControlEnabled": false,
@@ -31,7 +31,7 @@ var destinations = [havanna, washington, moscow];
       "areasSettings": {
         "autoZoom": false,
         "unlistedAreasColor": "#D0E1B1",            // Color of unused countries
-        "rollOverColor": "#2B3545",                 // Color when hovering country
+        "rollOverColor": "#A0D1B1",                 // Color when hovering country
         "outlineColor": "#7D807C",                  // Color of used country outline
         "unlistedAreasOutlineColor": "#7D807C",    // Color of unused country outline
         "alpha": 1,
