@@ -41,9 +41,13 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/" type="image/x-icon">
     <link rel="icon" href="images/" type="image/x-icon">
+
+    <!-- Signature -->
+    <script src="js/signatureDrawing.js"></script>
+
 </head>
 
-<body>
+<body onload="InitThis();">
 
     <section class="wrapper">
         <div id="cover"></div>
@@ -116,6 +120,8 @@
                     <img src="images/meduana-6917.jpg" alt="">
                     <figcaption></figcaption>
                 </figure>
+
+                <canvas id="signatureCanvas" width="500px" height="200px" style="border-bottom:2px solid black"></canvas>
             </div>
             <div class="buttons">
 
