@@ -90,7 +90,7 @@ window.addEventListener("load", function(){
         pin.labelFontSize = 14;
 				pin.longitude = destinations[i].long;
         pin.latitude = destinations[i].lat;
-        pin.labelRollOverColor = "#000000";     // Color when hovering the label of destination
+        pin.labelRollOverColor = "#B72323";     // Color when hovering the label of destination
         // pin.svgPath = icon;
 				// pin.color = "#ff0000";
 				// pin.scale = 2;
