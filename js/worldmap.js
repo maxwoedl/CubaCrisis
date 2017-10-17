@@ -37,7 +37,8 @@ var destinations = [havanna, washington, moscow];
         "alpha": 1,
         "unlistedAreasAlpha": 1
       },
-      "listeners": [{
+      "listeners": [
+        {
         "event": "rendered",
         "method": function(e) {
           var map = e.chart;
@@ -45,7 +46,8 @@ var destinations = [havanna, washington, moscow];
           map.initialZoomLatitude = map.zoomLatitude();
           map.initialZoomLongitude = map.zoomLongitude();
         }
-      }]
+      }
+    ]
     });
 
 
@@ -101,7 +103,10 @@ window.addEventListener("load", function(){
 
     map.validateData();
 
+    map.addListener("clicked", mapClick);
+
     zoomToDestination(center);
+
 
 });
 
@@ -122,3 +127,7 @@ window.addEventListener("keydown", function(event) {
         }
     }
 });
+
+function mapClick(){
+  alert("hallo");
+}
