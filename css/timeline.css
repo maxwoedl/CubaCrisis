@@ -43,7 +43,7 @@
     transition: all 0.15s linear;
 }
 
-.knotpoint:hover {
+.knotpoint:hover, .knotpoint.activeKnot {
     width: 26px;
     height: 26px;
     border-radius: 0%;
