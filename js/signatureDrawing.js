@@ -3,23 +3,23 @@ var lastX, lastY;
 var ctx;
 
 function InitThis() {
-    ctx = document.getElementById('myCanvas').getContext("2d");
+    ctx = document.getElementById('signatureCanvas').getContext("2d");
 
-    $('#myCanvas').mousedown(function (e) {
+    $('#signatureCanvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
     });
 
-    $('#myCanvas').mousemove(function (e) {
+    $('#signatureCanvas').mousemove(function (e) {
         if (mousePressed) {
             Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
         }
     });
 
-    $('#myCanvas').mouseup(function (e) {
+    $('#signatureCanvas').mouseup(function (e) {
         mousePressed = false;
     });
-	    $('#myCanvas').mouseleave(function (e) {
+	    $('#signatureCanvas').mouseleave(function (e) {
         mousePressed = false;
     });
 }
