@@ -180,6 +180,10 @@ html, body{
     z-index: 1;
   }
 
+  tspan{
+    cursor: pointer;
+  }
+
   #mapdiv{
       position: absolute;
       top: -5vh;

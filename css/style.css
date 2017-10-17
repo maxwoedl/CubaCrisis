@@ -54,7 +54,7 @@ html, body {
     left: 0;
     position: fixed;
     overflow: hidden;
-    transition: background 0.3s ease-in-out, width 0.3s ease; }
+    transition: background 0.3s ease-in-out, width 0.3s ease; }
     .wrapper nav.show {
       background: #171717;
       width: 18em; }
@@ -135,6 +135,8 @@ html, body {
     margin-right: -2rem;
     border-radius: 20px;
     z-index: 1; }
+  .wrapper tspan {
+    cursor: pointer; }
   .wrapper #mapdiv {
     position: absolute;
     top: -5vh;
