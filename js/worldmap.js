@@ -73,8 +73,6 @@ function zoomToDestination(dest) {
 
 // ---------- Labels -----------------------------------------------
 
-var icon = "M-281,412.9c-3.3,0-6,2.7-6,6c0,3.9,4.3,8.7,5,9.4c0.3,0.3,0.5,0.6,1,0.6s0.7-0.3,1-0.6c0.7-0.7,5-5.5,5-9.4C-275,415.6-277.7,412.9-281,412.9z M-281,422.9c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4C-277,421.1-278.8,422.9-281,422.9z M-281,416.9c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C-279,417.8-279.9,416.9-281,416.9z"
-
 window.addEventListener("load", function(){
 
     map.dataProvider.images = [];
@@ -90,9 +88,6 @@ window.addEventListener("load", function(){
 				pin.longitude = destinations[i].long;
         pin.latitude = destinations[i].lat;
         pin.labelRollOverColor = "#B72323";     // Color when hovering the label of destination
-        // pin.svgPath = icon;
-				// pin.color = "#ff0000";
-				// pin.scale = 2;
         pin.label = destinations[i].label;
         pin.labelPosition = "right";
         map.dataProvider.images.push(pin);
@@ -133,11 +128,7 @@ window.addEventListener("load", function(){
       }
     }
 
-
 });
-
-
-
 
 
 // ---------- Debugging (activate debug var to enable) -----------------------------------------------
