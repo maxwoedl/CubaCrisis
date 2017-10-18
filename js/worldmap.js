@@ -38,13 +38,10 @@ var destinations = [havanna, washington, moscow];
         "unlistedAreasAlpha": 1
       },
       "listeners": [
-        {
-        "event": "rendered",
-        "method": function(e) {
-          var map = e.chart;
-          map.initialZoomLevel = map.zoomLevel();
-          map.initialZoomLatitude = map.zoomLatitude();
-          map.initialZoomLongitude = map.zoomLongitude();
+      {
+        "event": "clickMapObject",
+        "method": function( event ) {
+          alert(event);
         }
       }
     ]
@@ -101,14 +98,46 @@ window.addEventListener("load", function(){
         map.dataProvider.images.push(pin);
     }
 
-    map.validateData();
+    /*
+    map.dataProvider.images.push( {
+    "type": "circle",
+    "theme": "light",
+    "width": 200,
+    "height": 200,
+    "color": '#FF0000',
+    "alpha": 0.4,
+    "longitude": havanna.long,
+    "latitude": havanna.lat,
+  } );
 
-    map.addListener("clicked", mapClick);
+
+  map.addListener("click", function(){
+      zoomToDestination(center);
+  });
+
+  */
+    map.validateData();
 
     zoomToDestination(center);
 
+    var labels = document.getElementsByTagName('tspan');
+    for(i = 0; i < labels.length; i++)
+    	labels[i].onclick = labelClicked;
+
+    function labelClicked() {
+
+      switch(this.innerHTML) {
+        case "Havanna": console.log(this.innerHTML); break;
+        case "Washington DC": console.log(this.innerHTML); break;
+        case "Moskau": console.log(this.innerHTML); break;
+      }
+    }
+
 
 });
+
+
+
 
 
 // ---------- Debugging (activate debug var to enable) -----------------------------------------------
@@ -127,7 +156,3 @@ window.addEventListener("keydown", function(event) {
         }
     }
 });
-
-function mapClick(){
-  alert("hallo");
-}
