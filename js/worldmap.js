@@ -1,19 +1,24 @@
-var DEBUG = true;
-var atCenter = false;
+let DEBUG = true
+let atCenter = false
+let rocketsVisible = false
 
 // ---------- Coordinates -----------------------------------------------
-var offset = {long: 20, lat: 0};
-var center = {zoom: 1, long: 10, lat: 44.5};
+let offset = {long: 20, lat: 0}
+let center = {zoom: 1, long: 10, lat: 44.5}
 
-var havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"};
-var washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"};
-var moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"};
+let havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"}
+let washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"}
+let moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"}
 
-var destinations = [havanna, washington, moscow];
+let destinations = [havanna, washington, moscow]
+let rockets = [
+    {origin: havanna, range: 200, color: '#FF0000'},
+    {origin: washington, range: 200, color: '#00FF00'}
+]
 
 // ---------- Generating Map -----------------------------------------------
 
-    var map = AmCharts.makeChart("mapdiv", {
+    let map = AmCharts.makeChart("mapdiv", {
       "type": "map",
       "theme": "light",
       "zoomDuration": "0.25",
@@ -41,83 +46,101 @@ var destinations = [havanna, washington, moscow];
       {
         "event": "clickMapObject",
         "method": function( event ) {
-          alert(event);
+
         }
       }
     ]
-    });
+    })
 
 
 function zoomIn() {
-  map.zoomIn();
+    map.zoomIn()
 }
 
 function zoomOut() {
-  map.zoomOut();
+    map.zoomOut()
 }
 
 function zoomToDestination(dest) {
     if(!atCenter) {
-        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat + offset.lat);
+        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat + offset.lat)
 
         setTimeout(function() {
-            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat);
-        }, 1500);
+            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat)
+        }, 1500)
     }
     else {
-        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat);
+        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat)
     }
 
-    atCenter = (dest == center) ? true : false;
+    atCenter = (dest == center) ? true : false
+}
+
+
+// ---------- Circles for Rocket Ranges -----------------------------------------------
+function showRocketRange() {
+    if(!rocketsVisible) {
+        for(let i = 0; i < rockets.length; i++) {
+            map.dataProvider.images.push({
+              "type": "circle",
+              "theme": "light",
+              "width": rockets[i].range,
+              "height": rockets[i].range,
+              "color": rockets[i].color,
+              "alpha": 0.4,
+              "longitude": rockets[i].origin.long,
+              "latitude": rockets[i].origin.lat,
+            })
+        }
+    }
+    else
+      map.dataProvider.images.splice(map.dataProvider.images.length - rockets.length)
+
+    rocketsVisible = (rocketsVisible) ? false : true
+
+    map.validateData()
+
+    zoomToDestination(center)
+
 }
 
 // ---------- Labels -----------------------------------------------
 
 window.addEventListener("load", function(){
 
-    map.dataProvider.images = [];
+    map.dataProvider.images = []
 
-    for(var i = 0; i < destinations.length; i++) {
-        let pin = new AmCharts.MapImage();
-				pin.imageURL = "images/pin_marker.svg";
-        pin.width = 30;
-        pin.height = 60;
-        pin.labelShiftY = -10;
-        pin.labelShiftX = -5;
-        pin.labelFontSize = 14;
-				pin.longitude = destinations[i].long;
-        pin.latitude = destinations[i].lat;
-        pin.labelRollOverColor = "#B72323";     // Color when hovering the label of destination
-        pin.label = destinations[i].label;
-        pin.labelPosition = "right";
-        map.dataProvider.images.push(pin);
+    for(let i = 0; i < destinations.length; i++) {
+        let pin = new AmCharts.MapImage()
+				pin.imageURL = "images/pin_marker.svg"
+        pin.width = 30
+        pin.height = 60
+        pin.labelShiftY = -10
+        pin.labelShiftX = -5
+        pin.labelFontSize = 14
+				pin.longitude = destinations[i].long
+        pin.latitude = destinations[i].lat
+        pin.labelRollOverColor = "#B72323"     // Color when hovering the label of destination
+        pin.label = destinations[i].label
+        pin.labelPosition = "right"
+        map.dataProvider.images.push(pin)
     }
 
     /*
-    map.dataProvider.images.push( {
-    "type": "circle",
-    "theme": "light",
-    "width": 200,
-    "height": 200,
-    "color": '#FF0000',
-    "alpha": 0.4,
-    "longitude": havanna.long,
-    "latitude": havanna.lat,
-  } );
-
 
   map.addListener("click", function(){
-      zoomToDestination(center);
-  });
+      zoomToDestination(center)
+  })
 
   */
-    map.validateData();
 
-    zoomToDestination(center);
+    map.validateData()
 
-    var labels = document.getElementsByTagName('tspan');
+    zoomToDestination(center)
+
+    let labels = document.getElementsByTagName('tspan')
     for(i = 0; i < labels.length; i++)
-    	labels[i].onclick = labelClicked;
+    	labels[i].onclick = labelClicked
 
     function labelClicked() {
 
@@ -128,14 +151,14 @@ window.addEventListener("load", function(){
       }
     }
 
-});
+})
 
 
-// ---------- Debugging (activate debug var to enable) -----------------------------------------------
+// ---------- Debugging (activate debug let to enable) -----------------------------------------------
 window.addEventListener("keydown", function(event) {
     if(event.keyCode == 112) {
-        DEBUG = (DEBUG) ? false : true;
-        console.log("Debugging:" + DEBUG);
+        DEBUG = (DEBUG) ? false : true
+        console.log("Debugging:" + DEBUG)
     }
 
     if(DEBUG) {
@@ -144,6 +167,7 @@ window.addEventListener("keydown", function(event) {
             case 87: zoomToDestination(washington); break;
             case 72: zoomToDestination(havanna); break;
             case 77: zoomToDestination(moscow); break;
+            case 82: showRocketRange(); break;
         }
     }
-});
+})
