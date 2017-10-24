@@ -33,11 +33,6 @@ h3 {
   margin-bottom: $vertical-rhythm;
 }
 
-.page-container {
-  padding: ($vertical-rhythm * 2) 2rem;
-}
-
-
 html, body{
   margin: 0;
   padding: 0;
@@ -192,10 +187,10 @@ html, body{
 }
 
   .timeline{
-    width: 90vw;
+    width: 80vw;
     height: 10vh;
     margin-top: 2rem;
-    margin-right: -2rem;
+    margin-right: 2rem;
     border-radius: 20px;
     z-index: 1;
   }

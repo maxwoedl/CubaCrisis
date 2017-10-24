@@ -18,9 +18,6 @@ h3 {
   font-size: 1.5em;
   margin-bottom: 1.5rem; }
 
-.page-container {
-  padding: 3rem 2rem; }
-
 html, body {
   margin: 0;
   padding: 0;
@@ -141,10 +138,10 @@ html, body {
     .wrapper #nav-list.nav-show {
       opacity: 1; }
   .wrapper .timeline {
-    width: 90vw;
+    width: 80vw;
     height: 10vh;
     margin-top: 2rem;
-    margin-right: -2rem;
+    margin-right: 2rem;
     border-radius: 20px;
     z-index: 1; }
   .wrapper tspan {
