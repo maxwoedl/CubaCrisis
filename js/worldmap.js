@@ -12,8 +12,7 @@ let moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"}
 
 let destinations = [havanna, washington, moscow]
 let rockets = [
-    {origin: havanna, range: 200, color: '#FF0000'},
-    {origin: washington, range: 200, color: '#00FF00'}
+    {origin: {long: -83, lat: 23}, range: 330, color: '#FF0000'},
 ]
 
 // ---------- Generating Map -----------------------------------------------
@@ -61,16 +60,16 @@ function zoomOut() {
     map.zoomOut()
 }
 
-function zoomToDestination(dest) {
+function zoomToDestination(dest, instant) {
     if(!atCenter) {
-        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat + offset.lat)
+        map.zoomToLongLat(center.zoom, center.long + offset.long, center.lat + offset.lat, instant)
 
         setTimeout(function() {
-            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat)
+            map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat, instant)
         }, 1500)
     }
     else {
-        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat)
+        map.zoomToLongLat(dest.zoom, dest.long + offset.long, dest.lat + offset.lat, instant)
     }
 
     atCenter = (dest == center) ? true : false
@@ -100,12 +99,11 @@ function showRocketRange() {
 
     map.validateData()
 
-    zoomToDestination(center)
+    zoomToDestination(center, true)
 
 }
 
 // ---------- Labels -----------------------------------------------
-
 window.addEventListener("load", function(){
 
     map.dataProvider.images = []
@@ -129,14 +127,14 @@ window.addEventListener("load", function(){
     /*
 
   map.addListener("click", function(){
-      zoomToDestination(center)
+      zoomToDestination(center, false)
   })
 
   */
 
     map.validateData()
 
-    zoomToDestination(center)
+    zoomToDestination(center, false)
 
     let labels = document.getElementsByTagName('tspan')
     for(i = 0; i < labels.length; i++)
@@ -163,10 +161,10 @@ window.addEventListener("keydown", function(event) {
 
     if(DEBUG) {
         switch(event.keyCode) {
-            case 27: zoomToDestination(center); break;
-            case 87: zoomToDestination(washington); break;
-            case 72: zoomToDestination(havanna); break;
-            case 77: zoomToDestination(moscow); break;
+            case 27: zoomToDestination(center, false); break;
+            case 87: zoomToDestination(washington, false); break;
+            case 72: zoomToDestination(havanna, false); break;
+            case 77: zoomToDestination(moscow, false); break;
             case 82: showRocketRange(); break;
         }
     }
