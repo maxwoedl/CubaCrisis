@@ -3,6 +3,35 @@ $button-color: #171717;
 $top-grad: #2c3e50  ;
 $bottom-grad: #51606f;
 
+/* Typography */
+
+$base-line-height: 1.5;
+$base-font-size: 1rem;
+$vertical-rhythm: $base-line-height * $base-font-size;
+
+body {
+  line-height: $base-line-height;
+}
+
+p {
+  font-size: $base-font-size;
+  margin-bottom: $vertical-rhythm;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: $vertical-rhythm * 2;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: $vertical-rhythm;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: $vertical-rhythm;
+}
 
 html, body{
   margin: 0;
@@ -58,8 +87,7 @@ html, body{
     left: 0;
     position: fixed;
     overflow: hidden;
-    transition: background 0.3s ease-in-out,
-      width 0.3s ease;
+    transition: background 0.3s ease-in-out, width 0.3s ease;
     &.show{
       background: $button-color;
       width: 18em;
@@ -131,19 +159,6 @@ html, body{
 	}
 }
 
-/*@keyframes curve {
-  0% {
-		transform: rotate(0deg)
-		           translate(0px)
-		           rotate(0deg);
-	}
-	100% {
-		transform: rotate(60deg)
-		           translate(200px)
-		           rotate(-60deg);
-	}
-}*/
-
 #nav-list{
   position: absolute;
   top: 7em;
@@ -151,7 +166,7 @@ html, body{
   opacity: 0;
   width: 100%;
   transition: opacity 0.2s ease;
-  //transition-delay: 0s;
+  list-style: none;
 
   a{
     color: white;
@@ -162,7 +177,7 @@ html, body{
     padding: 1.2em 0;
     transition: color 0.2s ease-in-out;
     &:hover{
-      color: #111;
+      text-decoration: underline;
     }
   }
 
@@ -172,10 +187,10 @@ html, body{
 }
 
   .timeline{
-    width: 90vw;
+    width: 80vw;
     height: 10vh;
     margin-top: 2rem;
-    margin-right: -2rem;
+    margin-right: 2rem;
     border-radius: 20px;
     z-index: 1;
   }
@@ -191,15 +206,9 @@ html, body{
       width: 100vw;
       height: 110vh;
       background-color: #A1DAF2;
-      /*background-color: #4be0ff;
-      background-image: -webkit-linear-gradient(top left, #4be0ff 0%, #5b9ef6 100%);
-      background-image: -o-linear-gradient(top left, #4be0ff 0%, #5b9ef6 100%);
-      background-image: linear-gradient(to bottom right, #4be0ff 0%, #5b9ef6 100%);
-    */
-    }
+  }
 
   .content{
-    //display: none;
     width: 60vw;
     height: 75vh;
     margin-top: 7.5vh;
@@ -225,7 +234,7 @@ html, body{
     .buttons{
       position: absolute;
       width: 100%;
-      height: 2rem;
+      height: 3rem;
       bottom: 0;
       background-color: white;
     }

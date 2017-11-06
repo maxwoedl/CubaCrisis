@@ -1,3 +1,23 @@
+/* Typography */
+body {
+  line-height: 1.5; }
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem; }
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 3rem; }
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1.5rem; }
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 1.5rem; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -20,19 +40,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-start;
-  /*@keyframes curve {
-  0% {
-		transform: rotate(0deg)
-		           translate(0px)
-		           rotate(0deg);
-	}
-	100% {
-		transform: rotate(60deg)
-		           translate(200px)
-		           rotate(-60deg);
-	}
-}*/ }
+  justify-content: flex-start; }
   .wrapper #cover {
     opacity: 0;
     visibility: hidden;
@@ -54,7 +62,7 @@ html, body {
     left: 0;
     position: fixed;
     overflow: hidden;
-    transition: background 0.3s ease-in-out, width 0.3s ease; }
+    transition: background 0.3s ease-in-out, width 0.3s ease; }
     .wrapper nav.show {
       background: #171717;
       width: 18em; }
@@ -115,7 +123,8 @@ html, body {
     padding: 0 0 0 2em;
     opacity: 0;
     width: 100%;
-    transition: opacity 0.2s ease; }
+    transition: opacity 0.2s ease;
+    list-style: none; }
     .wrapper #nav-list a {
       color: white;
       text-decoration: none;
@@ -125,14 +134,14 @@ html, body {
       padding: 1.2em 0;
       transition: color 0.2s ease-in-out; }
       .wrapper #nav-list a:hover {
-        color: #111; }
+        text-decoration: underline; }
     .wrapper #nav-list.nav-show {
       opacity: 1; }
   .wrapper .timeline {
-    width: 90vw;
+    width: 80vw;
     height: 10vh;
     margin-top: 2rem;
-    margin-right: -2rem;
+    margin-right: 2rem;
     border-radius: 20px;
     z-index: 1; }
   .wrapper tspan {
@@ -143,12 +152,7 @@ html, body {
     left: 0;
     width: 100vw;
     height: 110vh;
-    background-color: #A1DAF2;
-    /*background-color: #4be0ff;
-      background-image: -webkit-linear-gradient(top left, #4be0ff 0%, #5b9ef6 100%);
-      background-image: -o-linear-gradient(top left, #4be0ff 0%, #5b9ef6 100%);
-      background-image: linear-gradient(to bottom right, #4be0ff 0%, #5b9ef6 100%);
-    */ }
+    background-color: #A1DAF2; }
   .wrapper .content {
     width: 60vw;
     height: 75vh;
@@ -167,6 +171,6 @@ html, body {
     .wrapper .content .buttons {
       position: absolute;
       width: 100%;
-      height: 2rem;
+      height: 3rem;
       bottom: 0;
       background-color: white; }
