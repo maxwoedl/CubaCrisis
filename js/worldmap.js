@@ -4,16 +4,14 @@ let rocketsVisible = false
 
 // ---------- Coordinates -----------------------------------------------
 let offset = {long: 20, lat: 0}
-let center = {zoom: 1, long: 10, lat: 44.5}
 
+let center = {zoom: 1, long: 10, lat: 44.5}
 let havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"}
 let washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"}
 let moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"}
 
-let destinations = [havanna, washington, moscow]
-let rockets = [
-    {origin: {long: -83, lat: 23}, range: 330, color: '#FF0000'},
-]
+let labeledCities = [havanna, washington, moscow]
+let missiles = [{origin: {long: -83, lat: 23}, range: 330, color: '#FF0000'}]
 
 // ---------- Generating Map -----------------------------------------------
 
@@ -79,21 +77,21 @@ function zoomToDestination(dest, instant) {
 // ---------- Circles for Rocket Ranges -----------------------------------------------
 function showRocketRange() {
     if(!rocketsVisible) {
-        for(let i = 0; i < rockets.length; i++) {
+        for(let i = 0; i < missiles.length; i++) {
             map.dataProvider.images.push({
               "type": "circle",
               "theme": "light",
-              "width": rockets[i].range,
-              "height": rockets[i].range,
-              "color": rockets[i].color,
+              "width": missiles[i].range,
+              "height": missiles[i].range,
+              "color": missiles[i].color,
               "alpha": 0.4,
-              "longitude": rockets[i].origin.long,
-              "latitude": rockets[i].origin.lat,
+              "longitude": missiles[i].origin.long,
+              "latitude": missiles[i].origin.lat,
             })
         }
     }
     else
-      map.dataProvider.images.splice(map.dataProvider.images.length - rockets.length)
+      map.dataProvider.images.splice(map.dataProvider.images.length - missiles.length)
 
     rocketsVisible = (rocketsVisible) ? false : true
 
@@ -108,7 +106,7 @@ window.addEventListener("load", function(){
 
     map.dataProvider.images = []
 
-    for(let i = 0; i < destinations.length; i++) {
+    for(let i = 0; i < labeledCities.length; i++) {
         let pin = new AmCharts.MapImage()
 				pin.imageURL = "images/pin_marker.svg"
         pin.width = 30
@@ -116,10 +114,10 @@ window.addEventListener("load", function(){
         pin.labelShiftY = -10
         pin.labelShiftX = -5
         pin.labelFontSize = 14
-				pin.longitude = destinations[i].long
-        pin.latitude = destinations[i].lat
+				pin.longitude = labeledCities[i].long
+        pin.latitude = labeledCities[i].lat
         pin.labelRollOverColor = "#B72323"     // Color when hovering the label of destination
-        pin.label = destinations[i].label
+        pin.label = labeledCities[i].label
         pin.labelPosition = "right"
         map.dataProvider.images.push(pin)
     }
