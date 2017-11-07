@@ -11,7 +11,7 @@ let washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"}
 let moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"}
 
 let labeledCities = [havanna, washington, moscow]
-let missiles = [{origin: {long: -83, lat: 23}, range: 330, color: '#FF0000'}]
+let missiles = [{origin: {long: -83, lat: 23}, range: 23, color: '#FF0000'}]
 
 // ---------- Generating Map -----------------------------------------------
 
@@ -81,12 +81,15 @@ function showRocketRange() {
             map.dataProvider.images.push({
               "type": "circle",
               "theme": "light",
-              "width": missiles[i].range,
-              "height": missiles[i].range,
+              // "width": missiles[i].range,
+              // "height": missiles[i].range,
+              "percentWidth": missiles[i].range,
+              "percentHeight": missiles[i].range,
               "color": missiles[i].color,
               "alpha": 0.4,
               "longitude": missiles[i].origin.long,
               "latitude": missiles[i].origin.lat,
+              "fixedSize": "true",
             })
         }
     }
