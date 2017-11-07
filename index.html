@@ -170,6 +170,20 @@
             }
             return true;
         });
+
+        //minimize
+        $(document).ready(function(){
+        	$('.min').on('click', function(){minimize();});
+        	$('.max').on('click', function(){maximize();});
+        });
+
+        function minimize(){
+        	$('body').addClass('minimized');
+        }
+
+        function maximize(){
+        	$('body').removeClass('minimized');
+        }
     </script>
     <script src="json/test.json"></script>
     <script src="js/clickTimeline.js"></script>
