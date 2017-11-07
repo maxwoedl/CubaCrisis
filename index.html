@@ -108,27 +108,31 @@
         </div>
 
         <div class="content" data-simplebar>
-            <div class="container" id="cc">
-              
-                <h1>Das ist eine Überschrift</h1>
+          <nav class="controls">
+        		<div class="max">Inhalt</div>
+        		<div class="min"></div>
+        	</nav>
+          <div class="container" id="cc">
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum pellentesque neque, eu dapibus justo pretium vel. Vestibulum porttitor interdum sapien, pretium euismod tellus posuere gravida. Fusce finibus sem et rhoncus faucibus. Sed hendrerit, nisl ut blandit laoreet, velit justo facilisis ex, at euismod nibh elit et enim. Cras et fringilla ipsum, a vestibulum elit. Sed tempor erat dapibus commodo sollicitudin. Aenean nec nulla ut ligula faucibus vestibulum eu non orci.
-                </p>
-                <p>
-                    Proin tincidunt ac augue sit amet auctor. Sed dignissim, erat in mattis eleifend, mauris felis hendrerit nunc, a malesuada risus dui ac erat. Proin sed lectus vitae tellus elementum ornare quis nec risus. Duis non bibendum nulla, eget semper massa. Morbi mauris diam, posuere et hendrerit sed, faucibus vitae lorem. Quisque malesuada vel neque quis pretium. In vitae lectus velit. Cras in ipsum ullamcorper nisi finibus porta. Nam euismod diam nec tortor viverra convallis. Nunc dignissim dui sit amet diam auctor egestas. Nulla id fermentum arcu. Sed et dictum neque, sed tincidunt lectus. Quisque tellus lorem, auctor eget diam non, tincidunt hendrerit orci. Donec consectetur, felis ac fermentum pharetra, eros sapien rutrum felis, a condimentum orci lectus sed sem. Pellentesque lacinia laoreet ex, in vulputate nulla feugiat nec.
-                </p>
+              <h1>Das ist eine Überschrift</h1>
 
-                <figure>
-                    <img src="images/meduana-6917.jpg" alt="">
-                    <figcaption></figcaption>
-                </figure>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum pellentesque neque, eu dapibus justo pretium vel. Vestibulum porttitor interdum sapien, pretium euismod tellus posuere gravida. Fusce finibus sem et rhoncus faucibus. Sed hendrerit, nisl ut blandit laoreet, velit justo facilisis ex, at euismod nibh elit et enim. Cras et fringilla ipsum, a vestibulum elit. Sed tempor erat dapibus commodo sollicitudin. Aenean nec nulla ut ligula faucibus vestibulum eu non orci.
+              </p>
+              <p>
+                  Proin tincidunt ac augue sit amet auctor. Sed dignissim, erat in mattis eleifend, mauris felis hendrerit nunc, a malesuada risus dui ac erat. Proin sed lectus vitae tellus elementum ornare quis nec risus. Duis non bibendum nulla, eget semper massa. Morbi mauris diam, posuere et hendrerit sed, faucibus vitae lorem. Quisque malesuada vel neque quis pretium. In vitae lectus velit. Cras in ipsum ullamcorper nisi finibus porta. Nam euismod diam nec tortor viverra convallis. Nunc dignissim dui sit amet diam auctor egestas. Nulla id fermentum arcu. Sed et dictum neque, sed tincidunt lectus. Quisque tellus lorem, auctor eget diam non, tincidunt hendrerit orci. Donec consectetur, felis ac fermentum pharetra, eros sapien rutrum felis, a condimentum orci lectus sed sem. Pellentesque lacinia laoreet ex, in vulputate nulla feugiat nec.
+              </p>
 
-                <canvas id="signatureCanvas" width="500px" height="200px" style="border-bottom:2px solid black"></canvas>
-            </div>
-            <div class="buttons">
+              <figure>
+                  <img src="images/meduana-6917.jpg" alt="">
+                  <figcaption></figcaption>
+              </figure>
 
-            </div>
+              <canvas id="signatureCanvas" width="500px" height="200px" style="border-bottom:2px solid black"></canvas>
+          </div>
+          <div class="buttons">
+
+          </div>
         </div>
 
     </section>
@@ -161,6 +165,20 @@
             }
             return true;
         });
+
+        //minimize
+        $(document).ready(function(){
+        	$('.min').on('click', function(){minimize();});
+        	$('.max').on('click', function(){maximize();});
+        });
+
+        function minimize(){
+        	$('body').addClass('minimized');
+        }
+
+        function maximize(){
+        	$('body').removeClass('minimized');
+        }
     </script>
     <script src="json/test.json"></script>
     <script src="js/clickTimeline.js"></script>
