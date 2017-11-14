@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/preview.css" />
 
     <!-- Simplebar -->
     <link rel="stylesheet" href="css/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 
 
     <!-- Worldmap -->
@@ -50,7 +52,7 @@
 
 </head>
 
-<body onload="InitThis();">
+<body class="preview">
 
     <section class="wrapper">
         <div id="cover"></div>
@@ -70,37 +72,7 @@
         <div class="timeline">
 
             <div id="customline">
-              <!--
-                <div class="knot" id="knot0" t="1910">
-                    <div class="knotdiv">
-                        <div class="knotpoint"></div>
-                    </div>
-                    <div class="knottext">1910</div>
-                </div>
-                <div class="knot" id="knot1" t="1912">
-                    <div class="knotdiv">
-                        <div class="knotpoint"></div>
-                    </div>
-                    <div class="knottext">1912</div>
-                </div>
-                <div class="knot" id="knot2" t="1918">
-                    <div class="knotdiv">
-                        <div class="knotpoint"></div>
-                    </div>
-                    <div class="knottext">1918</div>
-                </div>
-                <div class="knot" id="knot3" t="1927">
-                    <div class="knotdiv">
-                        <div class="knotpoint"></div>
-                    </div>
-                    <div class="knottext">1927</div>
-                </div>
-                <div class="knot" id="knot4" t="1928">
-                    <div class="knotdiv">
-                        <div class="knotpoint"></div>
-                    </div>
-                    <div class="knottext">1928</div>
-                </div>
+            <!--
                 <div class="knot" id="knot5" t="1935">
                     <div class="knotdiv">
                         <div class="knotpoint"></div>
@@ -110,7 +82,7 @@
             </div>
         </div>
 
-        <div class="content" id="content" data-simplebar>
+        <div class="content" data-simplebar id="ccc">
 
             <nav class="controls">
               <div class="max">Story</div>
@@ -134,14 +106,47 @@
                 </figure>
 
                 <canvas id="signatureCanvas" width="500px" height="200px" style="border-bottom:2px solid black"></canvas>
-
-
                 <button onclick="startTyping()">Write</button>
                 <div id="contract" class="contract" data-text="Augue ac adipiscing quis, arcu auctor! Elementum. Non vel vel augue odio et in et est, integer, porta sed parturient rhoncus habitasse! Et porttitor duis pulvinar pulvinar proin ac augue ac sagittis scelerisque, elementum integer eros. Sed, nec! Porta, dapibus in quis elementum penatibus adipiscing, nec adipiscing adipiscing purus lacus odio dolor diam a, elementum etiam? Placerat, etiam eros porttitor, tincidunt nunc sit nascetur purus risus sed adipiscing augue, porta a proin. Pid platea pid dignissim adipiscing dapibus dolor turpis placerat augue et urna, mauris porttitor ut ac, ut mid. Pid, est vut placerat mattis lectus! Mattis in mus, augue scelerisque in. In velit, dictumst ut mus tincidunt dapibus? Est, velit vel? Risus pulvinar penatibus ut amet sociis, est montes."></div>
 
+              <h1>Willkommen zu unserer interaktiven Tour zum Thema Cuba Krise</h1>
+              <div id="firstChoose">
+                <div class="story">
+                  <figure >
+                      <img src="images/testimages/1.jpg" alt="">
+                      <figcaption>Bildunterschrift</figcaption>
+                  </figure>
+                  <p>
+                    Toller Preview Text um sich auch die STory einstellen zu können, immerhin will ja jeder wissen was man so erwarten kann wenn man diese unglaublich tolle story pickt
+                  </p>
+                </div>
+                <div class="story">
+                  <figure>
+                      <img src="images/testimages/2.jpg" alt="">
+                      <figcaption>Bildunterschrift</figcaption>
+                  </figure>
+                  <p>
+                    lore magna a sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                  </p>
+                </div>
+                <div class="story">
+                  <figure>
+                      <img src="images/testimages/3.jpg" alt="">
+                      <figcaption>Bildunterschrift</figcaption>
+                  </figure>
+                  <p>
+      sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+                <div id="fill100">
+                <div class="controlbutton" id="startTour" onclick="startTour()">Beginne deine Tour</div></div>
+              </div>
+              <button onclick="startTyping()">Write</button>
+              <div class="contract" data-text="Augue ac adipiscing quis, arcu auctor! Elementum. Non vel vel augue odio et in et est, integer, porta sed parturient rhoncus habitasse! Et porttitor duis pulvinar pulvinar proin ac augue ac sagittis scelerisque, elementum integer eros. Sed, nec! Porta, dapibus in quis elementum penatibus adipiscing, nec adipiscing adipiscing purus lacus odio dolor diam a, elementum etiam? Placerat, etiam eros porttitor, tincidunt nunc sit nascetur purus risus sed adipiscing augue, porta a proin. Pid platea pid dignissim adipiscing dapibus dolor turpis placerat augue et urna, mauris porttitor ut ac, ut mid. Pid, est vut placerat mattis lectus! Mattis in mus, augue scelerisque in. In velit, dictumst ut mus tincidunt dapibus? Est, velit vel? Risus pulvinar penatibus ut amet sociis, est montes."></div>
+
             </div>
             <div class="buttons">
-
+                <div class="controlbutton bottom" id="prev">Zurück</div>
+                <div class="controlbutton bottom" id="next">Weiter</div>
             </div>
         </div>
 
@@ -193,6 +198,7 @@
     </script>
     <script src="json/test.json"></script>
     <script src="js/clickTimeline.js"></script>
+        <script src="js/initTour.js"></script>
 
 </body>
 
