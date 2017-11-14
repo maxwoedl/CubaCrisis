@@ -1,3 +1,16 @@
+$.ajax({url: "http://www.terminate.at/staudigl/views.json", success: function(views){
+          views[0].name
+          views[0].description
+          views[0].dates[0].date
+          views[0].dates[0].content
+          views[0].dates[0].facts[0]
+          views[0].dates[0].facts[1]
+          views[0].dates[1].date
+          views[0].dates[1].content
+          views[0].dates[1].facts[0]
+          views[0].dates[1].facts[1]
+    }});
+
 let knots = document.getElementsByClassName('knotpoint');
 let active;
 

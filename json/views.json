@@ -1,0 +1,20 @@
+[{
+  "name": "view1_name",
+  "description" : "view1_description",
+  "dates": [{
+    "date":"view1_date1_date",
+    "content":"view1_date1_content",
+    "facts":[
+      "view1_date1_fact1",
+      "view1_date1_fact2"
+    ]
+  },
+  {
+    "date":"view1_date2_date",
+    "content":"view1_date2_content",
+    "facts":[
+      "view1_date2_fact1",
+      "view1_date2_fact2"
+    ]
+  }]
+}]
