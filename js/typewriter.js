@@ -4,7 +4,7 @@ function typeWriter(text, n) {
     n++
     setTimeout(function() {
       typeWriter(text, n)
-    }, 20)
+    }, 10)
   }
 }
 

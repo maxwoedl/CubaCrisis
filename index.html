@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <div class="content" data-simplebar>
+        <div class="content" id="content" data-simplebar>
 
             <nav class="controls">
               <div class="max">Story</div>
@@ -137,7 +137,7 @@
 
 
                 <button onclick="startTyping()">Write</button>
-                <div class="contract" data-text="Augue ac adipiscing quis, arcu auctor! Elementum. Non vel vel augue odio et in et est, integer, porta sed parturient rhoncus habitasse! Et porttitor duis pulvinar pulvinar proin ac augue ac sagittis scelerisque, elementum integer eros. Sed, nec! Porta, dapibus in quis elementum penatibus adipiscing, nec adipiscing adipiscing purus lacus odio dolor diam a, elementum etiam? Placerat, etiam eros porttitor, tincidunt nunc sit nascetur purus risus sed adipiscing augue, porta a proin. Pid platea pid dignissim adipiscing dapibus dolor turpis placerat augue et urna, mauris porttitor ut ac, ut mid. Pid, est vut placerat mattis lectus! Mattis in mus, augue scelerisque in. In velit, dictumst ut mus tincidunt dapibus? Est, velit vel? Risus pulvinar penatibus ut amet sociis, est montes."></div>
+                <div id="contract" class="contract" data-text="Augue ac adipiscing quis, arcu auctor! Elementum. Non vel vel augue odio et in et est, integer, porta sed parturient rhoncus habitasse! Et porttitor duis pulvinar pulvinar proin ac augue ac sagittis scelerisque, elementum integer eros. Sed, nec! Porta, dapibus in quis elementum penatibus adipiscing, nec adipiscing adipiscing purus lacus odio dolor diam a, elementum etiam? Placerat, etiam eros porttitor, tincidunt nunc sit nascetur purus risus sed adipiscing augue, porta a proin. Pid platea pid dignissim adipiscing dapibus dolor turpis placerat augue et urna, mauris porttitor ut ac, ut mid. Pid, est vut placerat mattis lectus! Mattis in mus, augue scelerisque in. In velit, dictumst ut mus tincidunt dapibus? Est, velit vel? Risus pulvinar penatibus ut amet sociis, est montes."></div>
 
             </div>
             <div class="buttons">
@@ -184,6 +184,7 @@
 
         function minimize(){
         	$('body').addClass('minimized');
+          zoomToDestination(center);
         }
 
         function maximize(){
