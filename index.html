@@ -50,6 +50,9 @@
     <!-- Typewriter -->
     <script src="js/typewriter.js"></script>
 
+    <!-- IntroJS -->
+    <link rel="stylesheet" type="text/css" href="js/introJS/introjs.min.css">
+
 </head>
 
 <body class="preview">
@@ -57,7 +60,7 @@
     <section class="wrapper">
         <div id="cover"></div>
         <nav>
-            <div id="nav-button"><span class="fa fa-navicon"></span></div>
+            <div id="nav-button" data-step='2' data-intro='Drücke hier um die Navigation zu zeigen, mit der du zwischen den verschiedenen Perspektiven der Kubakrise hin und her springen kannst.'><span class="fa fa-navicon"></span></div>
             <ul id="nav-list">
                 <li><a href="#">Nav Item 1</a></li>
                 <li><a href="#">Nav Item 2</a></li>
@@ -69,7 +72,7 @@
 
         <div id="mapdiv"></div>
 
-        <div class="timeline">
+        <div class="timeline" data-step='1' data-intro='Die Timeline zeigt dir immer an an welchem Datum du dich gerade befindest.'>
 
             <div id="customline">
             <!--
@@ -82,7 +85,7 @@
             </div>
         </div>
 
-        <div class="content" data-simplebar id="ccc">
+        <div class="content" data-simplebar data-step='3' data-position='left' id="ccc" data-intro='Hier findest du alle Informationen zum Thema und viele interaktive Aufgaben.'>
 
             <nav class="controls">
               <div class="max">Story</div>
@@ -120,7 +123,7 @@
       sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>
                 <div id="fill100">
-                <div class="controlbutton" id="startTour" onclick="startTour()">Beginne deine Tour</div></div>
+                <div class="controlbutton" id="startTour" onclick='startTour()'>Beginne deine Tour</div></div>
               </div>
 
               <h1>Das ist eine Überschrift</h1>
@@ -197,7 +200,8 @@
     </script>
     <script src="json/test.json"></script>
     <script src="js/clickTimeline.js"></script>
-        <script src="js/initTour.js"></script>
+    <script src="js/introJS/intro.min.js"></script>
+    <script src="js/initTour.js"></script>
 
 </body>
 
