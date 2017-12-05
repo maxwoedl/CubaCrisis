@@ -17,4 +17,52 @@
       "view1_date2_fact2"
     ]
   }]
+},
+{
+  "name": "view2_name",
+  "description" : "view2_description",
+  "dates": [{
+    "date":"view2_date1_date",
+    "content":"view2_date1_content",
+    "facts":[
+      "view2_date1_fact1",
+      "view2_date1_fact2"
+    ]
+  },
+  {
+    "date":"view2_date2_date",
+    "content":"view2_date2_content",
+    "facts":[
+      "view2_date2_fact1",
+      "view2_date2_fact2"
+    ]
+  }]
+},
+{
+  "name": "view3_name",
+  "description" : "view3_description",
+  "dates": [{
+    "date":"view3_date1_date",
+    "content":"view3_date1_content",
+    "facts":[
+      "view3_date1_fact1",
+      "view3_date1_fact2"
+    ]
+  },
+  {
+    "date":"view3_date2_date",
+    "content":"view3_date2_content",
+    "facts":[
+      "view3_date2_fact1",
+      "view3_date2_fact2"
+    ]
+  },
+  {
+    "date":"view3_date3_date",
+    "content":"view3_date3_content",
+    "facts":[
+      "view3_date3_fact1",
+      "view3_date3_fact2"
+    ]
+  }]
 }]
