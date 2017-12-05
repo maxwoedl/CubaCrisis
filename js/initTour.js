@@ -1,19 +1,20 @@
-let stories = document.getElementsByClassName("story");
+
 let activeStory = -1;
-for(let i = 0; i<stories.length;i++){
-  stories[i].addEventListener("click",function(){
-    if(activeStory!=-1){
-          stories[activeStory].classList.remove("special");
-    }
-    stories[i].classList.add("special");
-    activeStory = i;
-    console.log(activeStory);
-  })
-}
+
+let weiter = document.getElementById('next');
+weiter.addEventListener('click', function(){
+      setActive(activeKnot+1);
+})
+let zurueck = document.getElementById('prev');
+zurueck.addEventListener('click', function(){
+      setActive(activeKnot-1);
+})
+
 
 function startTour(){
   let body = document.getElementsByTagName("BODY")[0];
   body.classList.remove("preview");
+  doEverything();
   $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
     // setTimeout(function() {startIntroJS();}, 2000);
     startIntroJS()

@@ -1,6 +1,6 @@
 # CubaCrisis
 
 
-- Nussi is Killer, Brudaaa
-- Clemens ist ein Instrument
+- Nussi is Bazilla, Schwestaaa
+- Mayonese/Clemens ist ein Instrument
   - Horn
