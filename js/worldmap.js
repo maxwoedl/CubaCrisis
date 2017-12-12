@@ -9,8 +9,9 @@ let center = {zoom: 1, long: 10, lat: 44.5}
 let havanna = {zoom: 7, long: -82, lat: 23, label: "Havanna"}
 let washington = {zoom: 6, long: -77, lat: 39, label: "Washington DC"}
 let moscow = {zoom: 5, long: 38, lat: 56, label: "Moskau"}
+let berlin = {zoom: 6, long: 13, lat: 52, label: "Berlin"}
 
-let labeledCities = [havanna, washington, moscow]
+let labeledCities = [havanna, washington, moscow, berlin]
 let missiles = [{origin: {long: -83, lat: 23}, range: 23, color: '#FF0000'}]
 
 // ---------- Generating Map -----------------------------------------------
@@ -24,7 +25,7 @@ let missiles = [{origin: {long: -83, lat: 23}, range: 23, color: '#FF0000'}]
       "dataProvider": {
         "map": "worldLow",
         "getAreasFromMap": false,
-        "areas": [ {id: "US", color: "#B0E1B1"}, {id: "RU", color: "#B0E1B1"}, {id: "CU", color: "#B0E1B1"}],   // Colors of used countries
+        "areas": [ {id: "US", color: "#B0E1B1"}, {id: "RU", color: "#B0E1B1"}, {id: "CU", color: "#B0E1B1"}, {id: "DE", color: "#B0E1B1"}],   // Colors of used countries
       },
       "zoomControl": {
           "zoomControlEnabled": false,
