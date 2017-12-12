@@ -14,7 +14,13 @@ zurueck.addEventListener('click', function(){
 function startTour(){
   let body = document.getElementsByTagName("BODY")[0];
   body.classList.remove("preview");
+<<<<<<< HEAD
     $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
+=======
+  doEverything();
+
+  $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
+>>>>>>> dcb5d6a475a4f4a6e976fd7c92970c4baf50e3bd
     // setTimeout(function() {startIntroJS();}, 2000);
     startIntroJS()
   });
