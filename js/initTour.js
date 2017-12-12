@@ -15,6 +15,7 @@ function startTour(){
   let body = document.getElementsByTagName("BODY")[0];
   body.classList.remove("preview");
   doEverything();
+
   $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
     // setTimeout(function() {startIntroJS();}, 2000);
     startIntroJS()
