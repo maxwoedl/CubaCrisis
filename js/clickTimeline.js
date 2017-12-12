@@ -41,6 +41,7 @@ var views;
       let knots = document.getElementsByClassName('knotpoint');
       function chooseStory(){
         let dates = views[activeStory].dates;
+        console.log("choose:",activeStory)
         document.getElementById('customline').innerHTML="";
         for(let i = 0;i<dates.length; i++){
           let date = dates[i].date;
@@ -84,10 +85,26 @@ var views;
         activeKnot=i;
         setStory(i);
       }
+      else{
+        if(i < 0){
+          if(activeStory>0){
+            activeStory=activeStory-1;
+            chooseStory();
+            setActive(knots.length-1);
+          }
+        }
+        else{
+          if(activeStory<views.length-1){
+          activeStory++;
+          chooseStory();
+          setActive(0);
+          }
+        }
+      }
       }
       function setStory(id){
-        console.log("dates an Stelle "+id);
-          let ue = views[activeStory].dates[id].date;
+        console.log("story "+activeStory+" dates an Stelle "+id);
+          let ue = views[activeStory].name + " - " + views[activeStory].dates[id].date;
           let con = views[activeStory].dates[id].content;
           addContent(ue,con);
       }
