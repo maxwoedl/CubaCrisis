@@ -60,7 +60,7 @@ html, body {
     width: 10em;
     border-radius: 0 10px 10px 0;
     left: 0;
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     transition: background 0.3s ease-in-out, width 0.3s ease; }
     .wrapper nav.show {
@@ -110,7 +110,6 @@ html, body {
         bottom: 0;
         margin: auto;
         animation: color 0.3s linear; }
-
 @keyframes color {
   0% {
     box-shadow: 0; }
@@ -162,7 +161,7 @@ html, body {
     padding-bottom: 20px;
     margin-right: 2rem;
     right: 0;
-    bottom: 0;
+    bottom: 30px;
     background: white;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 10px; }
@@ -240,7 +239,7 @@ html, body {
   opacity: .5; }
 
 .minimized .content:hover {
-  opacity: .75; }
+  opacity: 1; }
 
 .minimized .content .max {
   top: 0;
@@ -250,3 +249,5 @@ html, body {
 
 .minimized .content .buttons {
   display: none; }
+
+/*# sourceMappingURL=style.css.map */
