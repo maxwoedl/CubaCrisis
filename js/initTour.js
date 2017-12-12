@@ -14,34 +14,14 @@ zurueck.addEventListener('click', function(){
 function startTour(){
   let body = document.getElementsByTagName("BODY")[0];
   body.classList.remove("preview");
-<<<<<<< HEAD
-    $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
-=======
-  doEverything();
-
   $("html, body,#ccc").animate({ scrollTop: 0 }, 600, function() {
->>>>>>> dcb5d6a475a4f4a6e976fd7c92970c4baf50e3bd
     // setTimeout(function() {startIntroJS();}, 2000);
-    startIntroJS()
+    startIntroJS();
   });
-
 }
 
-function startIntroJS() {
+function startIntroJS(){
 	checkCookie();
- /* introJs()
-    .setOption('showStepNumbers', false)
-    .setOption('showBullets', false)
-    .setOption('hideNext', true)
-    .setOption('hidePrev', true)
-    .setOption('disableInteraction', true)
-    .setOption('nextLabel', 'Weiter')
-    .setOption('prevLabel', 'Zurück')
-    .setOption('skipLabel', 'Überspringen')
-    .setOption('doneLabel', 'Fertig')
-    .setOption('keyboardNavigation', true)
-    .setOption('scrollToElement', false)
-    .start();*/
 }
 
 function setCookie(cname, cvalue, exdays) {
