@@ -90,6 +90,7 @@ var views;
           if(activeStory>0){
             activeStory=activeStory-1;
             chooseStory();
+            eventAdd();
             setActive(knots.length-1);
           }
         }
@@ -97,6 +98,7 @@ var views;
           if(activeStory<views.length-1){
           activeStory++;
           chooseStory();
+          eventAdd();
           setActive(0);
           }
         }
@@ -128,6 +130,7 @@ var views;
             a.addEventListener('click',function(){
               activeStory = i;
               chooseStory();
+              eventAdd();
               setActive(0);
             })
 
