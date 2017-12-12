@@ -118,33 +118,12 @@ var views;
         cc.appendChild(h);
         cc.appendChild(p);
       }
-      function addNavItems(){
 
-        let navbar = document.getElementById('nav-list');
-        for(let i = 0; i<views.length;i++){
-
-            let navItem = document.createElement('li');
-            let a = document.createElement('a');
-            a.addEventListener('click',function(){
-              activeStory = i;
-              chooseStory();
-              setActive(0);
-            })
-
-            a.innerHTML = views[i].name;
-            navItem.appendChild(a);
-            navbar.appendChild(navItem);
-
-        }
-
-      }
 
 
     function doEverything(){
       chooseStory();
       eventAdd();
-      addNavItems();
-      setActive(0);
     }
 /*
 function addKnot(date, id){

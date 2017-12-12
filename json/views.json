@@ -1,12 +1,13 @@
 [{
-  "name": "view1_name",
-  "description" : "view1_description",
+  "name": "USA",
+  "description" : "Die Vereinigten Staaten, unter der Führung von John F. Kennedy waren einer der zwei Hauptspieler der Kubakrise, da der Rivale des kalten Krieges, die UdSSR Raketen stationierte und somit eine Gefahr für die USA darstellte.",
   "dates": [{
-    "date":"view1_date1_date",
-    "content":"view1_date1_content",
+    "date":"14.10.1962",
+    "content":"
+      <script>zoomToDestination(washington, false)</script><h2>John F. Kennedy genehmigt erneute Aufklärungsflüge über Kuba mit Lockheed U-2 Flugzeugen.</h2><img src='/images/lockheed_u2.jpg' alt='Lockheed U2' /><p>Die Flugzeuge überfliegen Kuba insgesamt zwei mal und entdecken dabei sowjetische Techniker und Soldaten, beim Bau von Startrampen für sowjetische Mittelstreckenraketen des Typs SS-4 Sandal und SS-5 Skean.</p>",
     "facts":[
-      "view1_date1_fact1",
-      "view1_date1_fact2"
+      "Erneute Aufklärungsflüge genehmigt",
+      "Bau von Startrampen entdeckt"
     ]
   },
   {
@@ -19,7 +20,7 @@
   }]
 },
 {
-  "name": "view2_name",
+  "name": "Kuba",
   "description" : "view2_description",
   "dates": [{
     "date":"view2_date1_date",
@@ -39,7 +40,7 @@
   }]
 },
 {
-  "name": "view3_name",
+  "name": "Sowjetunion",
   "description" : "view3_description",
   "dates": [{
     "date":"view3_date1_date",
