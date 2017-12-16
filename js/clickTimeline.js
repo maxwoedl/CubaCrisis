@@ -41,6 +41,8 @@ var views;
       let knots = document.getElementsByClassName('knotpoint');
       function chooseStory(){
         let dates = views[activeStory].dates;
+        console.log("choose:",activeStory)
+        document.getElementById('customline').innerHTML="";
         for(let i = 0;i<dates.length; i++){
           let date = dates[i].date;
           let id = i;
@@ -83,10 +85,28 @@ var views;
         activeKnot=i;
         setStory(i);
       }
+      else{
+        if(i < 0){
+          if(activeStory>0){
+            activeStory=activeStory-1;
+            chooseStory();
+            eventAdd();
+            setActive(knots.length-1);
+          }
+        }
+        else{
+          if(activeStory<views.length-1){
+          activeStory++;
+          chooseStory();
+          eventAdd();
+          setActive(0);
+          }
+        }
+      }
       }
       function setStory(id){
-        console.log("dates an Stelle "+id);
-          let ue = views[activeStory].dates[id].date;
+        console.log("story "+activeStory+" dates an Stelle "+id);
+          let ue = views[activeStory].name + " - " + views[activeStory].dates[id].date;
           let con = views[activeStory].dates[id].content;
           addContent(ue,con);
       }
@@ -100,12 +120,34 @@ var views;
         cc.appendChild(h);
         cc.appendChild(p);
       }
+      function addNavItems(){
 
+        let navbar = document.getElementById('nav-list');
+        for(let i = 0; i<views.length;i++){
+
+            let navItem = document.createElement('li');
+            let a = document.createElement('a');
+            a.addEventListener('click',function(){
+              activeStory = i;
+              chooseStory();
+              eventAdd();
+              setActive(0);
+            })
+
+            a.innerHTML = views[i].name;
+            navItem.appendChild(a);
+            navbar.appendChild(navItem);
+
+        }
+
+      }
 
 
     function doEverything(){
       chooseStory();
       eventAdd();
+      addNavItems();
+      setActive(0);
     }
 /*
 function addKnot(date, id){
