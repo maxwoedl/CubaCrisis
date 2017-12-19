@@ -34,6 +34,12 @@
   color: white;
 }
 
+.knottext div {
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(80, 80, 80, 0.3);
+}
+
 .knotpoint {
   cursor: pointer;
   width: 18px;
