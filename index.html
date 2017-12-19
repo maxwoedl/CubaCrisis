@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/preview.css" />
 
@@ -125,7 +125,8 @@
                 </div>
               -->
                 <div id="fill100">
-                <div class="controlbutton" id="startTour" onclick='startTour()'>Beginne deine Tour</div></div>
+                  <div class="controlbutton" id="startTour" onclick='startTour()'>Beginne deine Tour</div>
+                </div>
               </div>
 
               <div class="sketchfab-embed-wrapper"><iframe width="500" height="380" src="https://sketchfab.com/models/8f5555096a1e48c1b12be6e61b8b2fd4/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
@@ -151,7 +152,7 @@
     </section>
 
     <script>
-        // My poor javascript skillz.
+        // My poor javascript skillz. - Holzier
         $('#nav-button').click(function () {
             $(this).toggleClass('width');
             $(this).parent().toggleClass('show');
@@ -194,12 +195,10 @@
         	$('body').removeClass('minimized');
         }
     </script>
+    <script src="js/introJS/intro.min.js"></script>
     <script src="json/test.json"></script>
     <script src="js/initTour.js"></script>
-
     <script src="js/clickTimeline.js"></script>
-    <script src="js/introJS/intro.min.js"></script>
-
 </body>
 
 </html>

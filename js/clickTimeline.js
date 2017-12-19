@@ -61,10 +61,12 @@ var views;
         knotpoint.setAttribute('class','knotpoint');
         var knottext = document.createElement('div');
         knottext.setAttribute('class','knottext');
-        var datetext = document.createTextNode(''+date);
+        var datetext = document.createElement('div');
+        var span = document.createTextNode(''+date);
         knot.appendChild(knotdiv);
         knot.appendChild(knottext);
         knotdiv.appendChild(knotpoint);
+        datetext.appendChild(span);
         knottext.appendChild(datetext);
         document.getElementById('customline').appendChild(knot);
       }
