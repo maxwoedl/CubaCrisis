@@ -1,5 +1,5 @@
 
-let activeStory = -1;
+let activeStory = 0;
 
 let weiter = document.getElementById('next');
 weiter.addEventListener('click', function(){
@@ -12,6 +12,7 @@ zurueck.addEventListener('click', function(){
 
 
 function startTour(){
+  document.getElementById('startTour').style.display = "none";
   let body = document.getElementsByTagName("BODY")[0];
   body.classList.remove("preview");
   doEverything();
@@ -64,5 +65,5 @@ function checkCookie() {
 		    .setOption('keyboardNavigation', true)
 		    .setOption('scrollToElement', false)
 		    .start();
-    }    
+    }
 }

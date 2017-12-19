@@ -40,6 +40,7 @@ var views;
       let activeKnot;
       let knots = document.getElementsByClassName('knotpoint');
       function chooseStory(){
+
         let dates = views[activeStory].dates;
         console.log("choose:",activeStory)
         document.getElementById('customline').innerHTML="";
@@ -78,11 +79,25 @@ var views;
         }
       }
       function setActive(i){
+
         if(i >= 0 &&i<knots.length){
+
         if(activeKnot>=0){
           knots[activeKnot].classList.remove('activeKnot');
         }
-
+        //Disable Buttons
+        if (activeStory == 0 && i == 0){
+          document.getElementById('prev').classList.add('disabled');
+        }
+        else{
+          document.getElementById('prev').classList.remove('disabled');
+        }
+        if (activeStory == views.length-1 && i == knots.length-1){
+          document.getElementById('next').classList.add('disabled');
+        }
+        else{
+          document.getElementById('next').classList.remove('disabled');
+        }
         knots[i].classList.add('activeKnot');
         activeKnot=i;
         setStory(i);
@@ -111,6 +126,9 @@ var views;
           let ue = views[activeStory].name + " - " + views[activeStory].dates[id].date;
           let con = views[activeStory].dates[id].content;
           addContent(ue,con);
+          if(mini){
+            maximize();
+          }
       }
       function addContent(ue,con){
         let h = document.createElement("H1");
@@ -146,6 +164,7 @@ var views;
 
 
     function doEverything(){
+
       chooseStory();
       eventAdd();
       addNavItems();

@@ -124,9 +124,7 @@
       sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>
               -->
-                <div id="fill100">
-                  <div class="controlbutton" id="startTour" onclick='startTour()'>Beginne deine Tour</div>
-                </div>
+
               </div>
 
               <h1>Das ist eine Überschrift</h1>
@@ -151,6 +149,7 @@
 
             <div class="buttons">
                 <div class="controlbutton bottom" id="prev">Zurück</div>
+                  <div class="controlbutton" id="startTour" onclick='startTour()'>Beginne deine Tour</div>
                 <div class="controlbutton bottom" id="next">Weiter</div>
             </div>
         </div>
@@ -191,14 +190,16 @@
         	$('.min').on('click', function(){minimize();});
         	$('.max').on('click', function(){maximize();});
         });
-
+        let mini = false;
         function minimize(){
         	$('body').addClass('minimized');
           zoomToDestination(center);
+          mini = true;
         }
 
         function maximize(){
         	$('body').removeClass('minimized');
+          mini = false;
         }
     </script>
     <script src="js/introJS/intro.min.js"></script>
