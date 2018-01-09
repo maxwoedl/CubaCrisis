@@ -3,10 +3,15 @@
   "description" : "Die Vereinigten Staaten, unter der Führung von John F. Kennedy waren einer der zwei Hauptspieler der Kubakrise, da der Rivale des kalten Krieges, die UdSSR Raketen stationierte und somit eine Gefahr für die USA darstellte.",
   "dates": [{
     "date":"14.10.1962",
-    "content":"<script>zoomToDestination(washington, false)</script><h2>John F. Kennedy genehmigt erneute Aufklärungsflüge über Kuba mit Lockheed U-2 Flugzeugen.</h2><img src='/images/lockheed_u2.jpg' alt='Lockheed U2' /><p>Die Flugzeuge überfliegen Kuba insgesamt zwei mal und entdecken dabei sowjetische Techniker und Soldaten, beim Bau von Startrampen für sowjetische Mittelstreckenraketen des Typs SS-4 Sandal und SS-5 Skean.</p>",
+    "content":"<h2>John F. Kennedy genehmigt erneute Aufklärungsflüge über Kuba mit Lockheed U-2 Flugzeugen.</h2><img src='/images/lockheed_u2.jpg' alt='Lockheed U2' /><p>Die Flugzeuge überfliegen Kuba insgesamt zwei mal und entdecken dabei sowjetische Techniker und Soldaten, beim Bau von Startrampen für sowjetische Mittelstreckenraketen des Typs SS-4 Sandal und SS-5 Skean.</p>",
     "facts":[
       "Erneute Aufklärungsflüge genehmigt",
       "Bau von Startrampen entdeckt"
+    ],
+    "function":"zoomToDestination",
+    "parameter":[
+      "washington",
+      false
     ]
   },
   {
@@ -15,7 +20,9 @@
     "facts":[
       "view1_date2_fact1",
       "view1_date2_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   }]
 },
 {
@@ -27,7 +34,9 @@
     "facts":[
       "view2_date1_fact1",
       "view2_date1_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   },
   {
     "date":"view2_date2_date",
@@ -35,7 +44,9 @@
     "facts":[
       "view2_date2_fact1",
       "view2_date2_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   }]
 },
 {
@@ -47,7 +58,9 @@
     "facts":[
       "view3_date1_fact1",
       "view3_date1_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   },
   {
     "date":"view3_date2_date",
@@ -55,7 +68,9 @@
     "facts":[
       "view3_date2_fact1",
       "view3_date2_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   },
   {
     "date":"view3_date3_date",
@@ -63,6 +78,8 @@
     "facts":[
       "view3_date3_fact1",
       "view3_date3_fact2"
-    ]
+    ],
+    "function":null,
+    "parameter":null
   }]
 }]
