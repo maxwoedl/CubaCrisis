@@ -122,6 +122,7 @@ var views;
       }
       }
       function setStory(id){
+
         console.log("story "+activeStory+" dates an Stelle "+id);
           let ue = views[activeStory].name + " - " + views[activeStory].dates[id].date;
           let con = views[activeStory].dates[id].content;
@@ -129,9 +130,13 @@ var views;
           if(mini){
             maximize();
           }
+          if(views[activeStory].dates[id].function!=null){
+            eval(views[activeStory].dates[id].function+"("+views[activeStory].dates[id].parameter+");");
+          }
       }
       function addContent(ue,con){
-        let h = document.createElement("H1");
+        let h = document.createElement("div");
+        h.classList.add("storydate");
         let p = document.createElement("p");
         h.innerHTML = ue;
         p.innerHTML = con;
